@@ -7,7 +7,7 @@ const meta: Meta<typeof Button> = {
      * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
      * to learn how to generate automatic titles
      */
-    title: 'Button',
+    title: 'Components/Button',
     component: Button,
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
     tags: ['autodocs'],
