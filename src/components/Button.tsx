@@ -21,6 +21,7 @@ interface ButtonProps {
    * Optional click handler
    */
   onClick?: () => void;
+  className?: string;
 }
 
 const getSizeClasses = (size: "small" | "medium" | "large") => {
@@ -52,10 +53,11 @@ export const Button = ({
   primary = false,
   size = 'medium',
   label,
+  className,
   ...props
 }: ButtonProps) => {
 
-  const computedClasses = useMemo(() => {
+    const computedClasses = useMemo(() => {
     const modeClass = getModeClasses(primary);
     const sizeClass = getSizeClasses(size);
 
@@ -63,7 +65,7 @@ export const Button = ({
   }, [primary, size]);
 
   return (
-    <button type="button" className={`${BASE_BUTTON_CLASSES} ${computedClasses}`} {...props}>
+    <button type="button" className={`${BASE_BUTTON_CLASSES} ${computedClasses} ${className ?? ''}`} {...props}>
       {label}
     </button>
   );
